@@ -1,0 +1,24 @@
+<div class="form-group">
+<label>Code</label>
+<input #code = "ngModel"type="text" disabled [(ngModel)]="book.Code"/>
+</div>
+
+<div class="form-group">
+    <label>Libele</label>
+    <input required pattern="[A-Za-z]{3,30}" #libelle = "ngModel" type="text"  [(ngModel)]="book.Libelle"/>
+    <div class="alert alert-danger" *ngIf="libelle.errors && libelle.dirty"></div>
+<ul>
+
+    
+   
+    <li *ngIf="">le libelle doit respecter le format</li>
+</ul>
+
+</div>
+
+    <div class="form-group">
+        <label>Prix</label>
+        <input #pu = "ngModel" type="number"  [(ngModel)]="book.Prix"/>
+        </div>
+
+        <button class="btn btn-primary"(click)=add();>ajouter</button>

@@ -1,0 +1,28 @@
+<table class="table tble-hover">
+
+<tr>
+<th>Code</th>
+<th>Libelle</th>
+<th>Prix</th>
+<th>Actions</th>
+
+</tr>
+<tr *ngFor="let livre of getBooks();let pos =index">
+
+<td>{{livre.Code | uppercase}}</td>
+<td>{{livre.Libelle}}</td>
+<td>{{livre.Prix | currency}}</td>
+<td>
+<button class="btn btn-danger" (click)="delete(pos)"></button>
+
+</td>
+
+</tr>
+
+</table>
+
+<div>
+<span *ngIf="getBooks().length == 0">Aucun Livre</span>
+<span *ngIf="getBooks().length ==1">1 Livre</span>
+<span *ngIf="getBooks().length>0">{{getBooks().length}}</span>
+</div>
